@@ -1,0 +1,58 @@
+button {
+    transform: scale(1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1; 
+  }  
+  
+  button.animate {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    background-color: #ff6f61; 
+  }  
+  
+  button.animate:hover {
+    transform: scale(1.15); 
+    background-color: #ff856e; 
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4); 
+  }  
+  
+  button.animate::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: calc(100% + 10px);
+    height: calc(100% + 10px);
+    border: 2px solid #ff6f61; 
+    border-radius: 5px;
+    box-sizing: border-box;
+    animation: rotate-border 2s linear infinite;
+    z-index: -1; 
+  }
+  
+  
+  button.animate:hover::before {
+    border-color: #ff856e; 
+    animation: rotate-border-hover 1s linear infinite; 
+  }  
+  
+  @keyframes rotate-border {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }  
+  
+  @keyframes rotate-border-hover {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
